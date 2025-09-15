@@ -1,1 +1,10 @@
+const participantes = {
+  Harry: 300,
+  Luna: 280,
+  Clarisse: 260
+};
+
+participantes.Luna = 300;
+
+console.log(participantes);
 
