@@ -1,1 +1,16 @@
+const participantes = {
+  Harry: 300,
+  Luna: 280,
+  Cedric: 270,
+  Clarisse: 260
+};
+
+function eliminarParticipante(tablero, nombre) {
+  delete tablero[nombre];
+  return tablero;
+}
+
+eliminarParticipante(participantes, 'Cedric');
+
+console.log(participantes);
 
