@@ -1,1 +1,53 @@
+const participantes = {
+  Harry: 300,
+  Luna: 280,
+  Cedric: 270
+};
 
+function agregarParticipante(tablero, nombre, puntos) {
+  tablero[nombre] = puntos;
+  return tablero;
+}
+
+agregarParticipante(participantes, "Clarisse", 260);
+
+delete participantes.Cedric;
+
+participantes.Luna = 300;
+
+participantes.Harry *= 1.5;
+
+function obtenerNombres(tablero) {
+  return Object.keys(tablero);
+}
+
+function participanteConMayorPuntaje(tablero) {
+  let ganador = null;
+  let maxPuntos = -Infinity;
+
+  for (const participante in tablero) {
+    if (tablero[participante] > maxPuntos) {
+      maxPuntos = tablero[participante];
+      ganador = participante;
+    }
+  }
+
+  return { ganador, puntos: maxPuntos };
+}
+
+function puntajeTotal(tablero) {
+  let total = 0;
+  for (const puntos of Object.values(tablero)) {
+    total += puntos;
+  }
+  return total;
+}
+
+const listaNombres = obtenerNombres(participantes);
+const topParticipante = participanteConMayorPuntaje(participantes);
+const totalPuntos = puntajeTotal(participantes);
+
+console.log("Participantes:", participantes);
+console.log("Lista de nombres:", listaNombres);
+console.log("Participante con mayor puntaje:", topParticipante);
+console.log("Puntaje total de todos los participantes:", totalPuntos);
