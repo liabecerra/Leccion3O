@@ -1,1 +1,14 @@
+const participantes = {
+  Harry: 450,
+  Luna: 300,
+  Clarisse: 260
+};
+
+function obtenerNombres(tablero) {
+  return Object.keys(tablero);
+}
+
+const listaNombres = obtenerNombres(participantes);
+
+console.log(listaNombres);
 
