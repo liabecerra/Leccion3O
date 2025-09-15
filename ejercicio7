@@ -1,1 +1,24 @@
+const participantes = {
+  Harry: 450,
+  Luna: 300,
+  Clarisse: 260
+};
+
+function participanteConMayorPuntaje(tablero) {
+  let ganador = null;
+  let maxPuntos = -Infinity;
+  
+  for (const participante in tablero) {
+    if (tablero[participante] > maxPuntos) {
+      maxPuntos = tablero[participante];
+      ganador = participante;
+    }
+  }
+  
+  return { ganador, puntos: maxPuntos };
+}
+
+const topParticipante = participanteConMayorPuntaje(participantes);
+
+console.log(topParticipante);
 
