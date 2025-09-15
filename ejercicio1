@@ -1,1 +1,5 @@
-
+const participantes = {
+  Harry: 300,
+  Luna: 280,
+  Cedric: 270
+};
